@@ -1,0 +1,98 @@
+@import "basic.less";
+
+.service {
+	#header {
+		position: absolute;  /*absolute不影響其他文章流動，讓下方圖可往上移，對body邊界*/
+		width: 100%;
+	}
+
+	#content {
+		.header {
+			background-image: url(https://via.placeholder.com/1920x1080);
+			&.black {
+				.title, #breadcrumbs li {
+					color: black;
+				}
+			}
+		}
+
+		
+		.spceial-service, .pricing {
+			padding: 100px 0;
+		}
+
+		.spceial-service {
+			
+			.title {
+				    margin-bottom: 5px;
+				    font-size: 18px;
+				    letter-spacing: 1px;
+				    color: @branding-color;
+				}
+
+		    .subtitle {
+		    	margin: 0;
+		   	    text-transform: uppercase;
+		   	    font-weight: normal;
+		        letter-spacing: 1px;
+		    	}
+		    }
+
+		    p {
+		    	margin-bottom: 30px;
+		    }
+
+		 .spceial-offer {
+		 	padding: 60px 0;
+		
+		 }
+
+
+
+
+			
+		}
+
+
+
+
+	}
+
+	.services {
+			padding: 100px 0;
+
+			.row {
+				> div{  /*row底下的所有div標籤皆設置此指令*/
+					padding: 50px;
+
+					&:hover {
+						background-color: black;				
+						color: white;
+						i {
+							color: @branding-color;
+						}
+					
+						
+					}
+				}
+			}
+		}
+
+	
+	.big-dot {
+		li{
+			float: left;
+			margin-bottom: 10px;
+		    width: 50%;	    
+		    line-height: 2;
+		    &:before {
+		    	font-family: 'fontello';
+		    	content: '\f10c';
+		    	color: #757575;
+		    	padding-right: 10px;
+		      }
+			}
+
+			
+		}
+	

@@ -1,0 +1,871 @@
+
+@color_2: #000;
+@color_3: #333;
+@color_5: #222;
+@color_6: white;
+@color_7: #fff;
+@color_8: #323232;
+@font_family_1: 'Sourc Sans Pro', sans-serif;
+
+@import "basic.less";
+@import "about.less";
+@import "services.less";
+@import "contact.less";
+@import "career.less";
+@import "our-clients.less";
+@import "team-member.less";
+
+/* custom class (全域設定) */
+/* header */
+/*content*/
+/*footer*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-family: @font_family_1;
+	font-size: 15px;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+}
+ul {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+img {
+	display: block;
+}
+p {
+	color: @grey-text;
+	line-height: 30px;
+}
+
+
+
+
+
+.container {
+	display: block;
+	width: 1170px;
+	margin: 0 auto;
+	&.full-width {
+	   width: 100%;
+	}
+}
+.clearfix , .row{     /*讓row內建有clearfix功能，才不用每次都要再多加class=clearfix*/
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.row {
+	margin: 0 -10px;
+
+	&.bordered {
+		> div {
+			border: 1px solid #f2f2f2;
+			margin-left: -1px;
+			margin-bottom: -1px; /*讓border位移重疊，中間才不會比邊匡粗*/
+		}
+	}
+	
+}
+
+.col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-12 {
+	float: left;
+	padding: 0 30px;
+
+}
+
+.col-2 {
+	width: 16.66666%;
+}
+.col-3 {
+	width: 25%;}
+
+.col-5 {
+	width: 41.66666%;
+}
+.col-7{
+	width: 58.33333%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-8 {
+	width: 66.666667%
+}
+.col-4 {
+	width: 33.33333%;
+}
+.col-12 {
+	width: 100%;
+}
+
+.button {
+	display: inline-block;
+	margin-top: 30px;
+	padding: 15px 30px;
+	background: #fff;
+	border: none;
+	color: @color_2;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	&.border {
+	border: 1px solid black;
+	  &.light {
+	  	border-color: #e8e8e8;
+	  }
+     }
+     &.black {
+     	background: #222;
+     	color: white;
+     	transition: 0.2s linear all; /*線性漸變*/
+     	&:hover {
+     		background: @branding-color;
+     	}
+     }
+
+     &.full-width{
+     	width: 100%;
+     }
+
+     
+     &.round {
+     	border-radius: 4px;
+     }
+
+}
+
+
+
+
+h3.title {
+	margin-top: 0;
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
+	}
+
+.feature-brief {
+	text-align: center;
+	 .title {
+	 	font-size: 18px;
+	 }
+	 i {
+	 	display: block;
+		padding-bottom: 30px;
+	 	font-size: 36px;  	    
+	   }
+
+	&.white {
+		color: white;
+		
+		i {
+			color: @branding-color;
+		}
+
+		p {
+	   	color: white; /*會繼承之前main設定過的顏色，除非要特別指定(只下在feature這層也沒用)*/
+	   }
+	}
+	&.black {
+		color: black;
+		i {
+			color: black;
+		}
+		p {
+			color: #7e7e7e;
+		}
+	}
+	  
+
+}
+
+
+.progress-bar {
+	margin-bottom: 50px;
+	width: 100%;
+	background-color: #eae8e8;
+	> div{
+		display: inline-block;
+	}
+	.progress {
+	padding-left: 10px;
+	background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 24px;
+	}
+	.pin {
+	position: relative;
+    top: -30px;
+    left: -30px;
+    background-color: rgba(0,0,0,.6);
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: white;
+    &:after {
+    top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-top-color: rgba(0,0,0,.6);
+	border-width: 3px;
+	margin-left: -3px;
+    }
+	}
+}
+
+.title-block {
+	margin-bottom: 50px;
+}
+
+.contact-info {
+	color: @grey-text;
+	line-height: 30px;
+	a {
+		color: @grey-text;
+		text-decoration: none;
+	}
+}
+
+.contact-form {
+	display: inline-block;  /*原為block跟上方p會有margin崩塌*/
+	margin-top: 50px;
+
+	.col-6, .col-12 {
+		padding: 0 10px;
+		margin-bottom: 30px;
+
+	}
+
+	label {
+		display: inline-block; /*label要改為inline-block(原本無display值）才可設定margin*/
+		margin-bottom: 5px;
+		color: @grey-text;
+		text-transform: uppercase;
+	}
+
+	input, textarea{
+		padding: 6px 12px;
+		width: 100%;
+		border: 1px solid #e5e5e5;
+
+	}
+
+	textarea {
+		height: 95px;
+	}
+
+	.button {
+		margin: 0;
+	}
+}
+
+
+
+.member {
+				.name {
+					font-weight: normal;
+				    letter-spacing: 1px;
+				    font-size: 14px;
+				    text-transform: uppercase;
+				}
+				.title {
+					color: #a5a5a5;
+					font-size: 12px;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+
+.promo-info {
+		 		float: left;
+		 		.title {
+		 			margin-bottom: 10px;
+		 			font-size: 20px;
+		 			em {
+		 				font-style: normal;
+		 				color:  @branding-color;
+		 			}
+		 		}
+		 		.desc {
+		 			color: @grey-text;
+		 		}
+		 	}
+
+		 	.promo-button {
+		 		margin: 0;
+		 		float: right;
+		 	}
+		 
+
+
+
+
+
+
+
+
+
+
+
+#content {
+	>div {
+		padding-top: 100px;
+		&:first-child {
+			padding-top: 0px;
+		}
+		&.full-padding {
+			padding: 100px 0;
+		}
+		&.gray-bg {
+			background: #f5f5f5;
+		}
+	}
+	
+	>hr {
+		margin: 0;
+		border-top: 1px solid #eee;
+	}
+	.event {
+		padding: 150px 0;
+	}
+
+	
+
+	div.header {    /*此處加div權重才會大於上面設定所有div(55行)*/
+		padding: 200px 0;
+		background-image: url(https://placem.at/things?w=1920&h=1080);
+		background-size: cover;
+		background-position: 50%;
+		background-repeat: no-repeat;
+		.title {
+			float: left;
+			margin: 0;
+			color: white;
+            text-transform: uppercase;
+            font-weight: normal;
+            letter-spacing: 2px;
+            font-size: 24px;
+		}
+		#breadcrumbs {
+			float: right;
+			padding: 15px;
+			font-size: 12px;
+            background: rgba(0,0,0,0.5);
+			li {
+				float: left;
+
+				text-transform: uppercase;
+				color: white;
+				&:after {  /*如同li:after*/
+					content: "/";
+					margin: 0 5px;	
+				}
+				&:last-child {  /*after的最後一個後面不用斜線*/
+					&:after {
+						content: "";
+						margin: 0;
+					}
+				}
+			}
+			a {
+				color: @grey-text;	
+				text-decoration: none;
+			}
+			&.transparent{
+				background: transparent;
+			}
+		}
+	}
+
+
+	div{
+			&.header{
+				&.gray-bg{
+					padding: 100px 0;
+					background: #f5f5f5;
+				}
+
+			&.black {
+				.title, #breadcrumbs li {
+					color: black;
+				}
+			}
+
+
+
+
+
+
+
+
+
+			}
+
+		}
+}
+
+
+#logo {
+	float: left;
+}
+#nav {
+	float: right;
+	text-transform: uppercase;
+	line-height: 98px;
+	li {
+		float: left;
+	}
+	a {
+		padding: 0 12px;
+		color: @color_3;
+		text-decoration: none;
+		font-size: 12px;
+	}
+	.active {
+		a {
+			color: @branding-color;
+		}
+	}
+}
+.boundary {
+	&:after {
+		content: "|";
+		padding: 0 12px;
+	}
+}
+.slider {
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+.intro {
+	text-align: center;
+	margin-bottom: 100px;
+	h2 {
+		margin: 0;
+		padding-bottom: 10px;
+		letter-spacing: 2px;
+		color: @color_3;
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+	hr {
+		background: #595959;
+		width: 60px;
+		margin: 0 auto;
+		height: 2px;
+		border: none;
+	}
+	p {
+		color: @grey-text;
+	}
+	&.big {
+		h2 {
+			padding: 0;
+		}
+		p {
+			margin: 0;
+			text-transform: uppercase;
+		}
+
+	}
+}
+.categories {
+	padding-top: 100px;
+}
+.category {
+	position: relative;
+	margin-bottom: 20px;
+	padding: 0 10px;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.title {
+		position: absolute;
+		top: 35%;
+		right: 10%;
+		font-weight: 300;
+		font-size: 24px;
+		text-transform: uppercase;
+		text-align: right;
+	}
+	.title.dark {
+		color: @color_5;
+	}
+	.title.light {
+		color: @color_6;
+	}
+}
+.product {
+	padding: 0 10px;
+	.info {
+		padding: 15px 0;
+		text-align: center;
+	}
+	.title {
+		margin: 0px;
+		a {
+			text-decoration: none;
+			color: @color_5;
+			font-weight: normal;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			font-size: 14px;
+		}
+	}
+	
+}
+
+.thumbnail {
+		position: relative;
+	}
+
+.price {
+	color: @grey-text;
+	font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 30px;
+}
+.thumbnail {
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.cover {
+		position: absolute;
+		background: rgba(255,255,255,0.9);
+		border: 20px solid rgba(0,0,0,0.1);
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		opacity: 0;
+		transition: all 0.3s;
+		&:hover {
+			opacity: 1;
+		}
+		>a {                /*">"表示直接選取cover底下的a，否則會影響到其他頁面*/
+			position: relative;
+			top: 100px;
+			color: @color_5;
+			text-decoration: none;			
+		    font-size: 25px;
+		}
+	}
+}
+.event {
+	background-image: url(http://lorempixel.com/1920/1080/);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	.title {
+		margin: 0;
+		color: @color_7;
+		font-weight: 200;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		line-height: 1.5;
+		font-size: 70px;
+	}
+	.subtitle {
+		margin: 0;
+		color: @color_7;
+		font-weight: 200;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		line-height: 1.5;
+		font-size: 24px;
+	}
+}
+.feature {
+	padding-bottom: 100px;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.info {
+		margin-top: 70px;
+		text-align: center;
+		.title {
+			text-transform: uppercase;
+			color: @branding-color;
+		}
+		.name {
+			text-transform: uppercase;
+		}
+		p {
+			margin: 0;
+			margin-bottom: 30px;
+			padding-top: 30px;
+		}
+		.price {
+			font-size: 26px;
+			color: @branding-color;
+			font-weight: 200;
+		}
+	}
+	.name {
+		margin: 0;
+		margin-bottom: 10px;
+		font-weight: normal;
+	}
+	.col-6 {
+		padding: 0 30px;
+	}
+	
+}
+.outlet {
+	padding-bottom: 100px;
+	h3 {
+		margin: 0;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+		font-weight: normal;
+	}
+	
+	.map {
+		a {
+			color: @branding-color;
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+.feature-item {
+	position: relative;
+	padding-left: 80px;
+	margin-bottom: 80px;
+	.icon {
+		position: absolute;
+		left: 0;
+		font-size: 36px;
+	}
+
+	.title {
+		font-size: 18px;
+	}
+
+	.desc {
+		color: @grey-text;
+	}
+}
+
+.pricing {
+			.package {
+				padding: 0 15px;
+				text-align: center;
+
+				.box {
+					padding: 50px;
+					border: 1px solid #e8e8e8;
+				}
+				.name {
+					margin: 0;
+					margin-bottom: 30px;
+					font-size: 16px;
+					font-weight: normal;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+				}
+
+				.value {
+					margin-bottom: 40px;
+					padding: 40px 0;
+					border-top: 1px solid #e8e8e8;
+				    border-bottom: 1px solid #e8e8e8;
+				}
+				.price {
+					margin-bottom: 3px;
+				    font-size: 42px;
+			        font-weight: normal;
+			        line-height: 1;
+			        color: black;	
+				}
+				.decimal {
+					font-size: 16px;
+					margin-left: -10px;
+				}
+				.duration{
+					text-transform: uppercase;
+				}
+				.features {
+					line-height: 2;
+				}
+
+				&.recommend{
+					.box{
+						background: #222;
+						color: white;
+					}
+					.name {
+						color: @branding-color;
+					}
+					.price {
+						color: white;
+					}
+					.features {
+						color: #7d7d7d;
+					}
+					.value {
+						border-color: rgba(255,255,255,.2);
+
+					}
+
+
+					
+				}
+			}
+		}
+
+
+
+
+
+
+
+#footer {
+	position: relative;
+	background: #f5f5f5;
+	padding: 80px 0;
+	.logo {
+		padding: 20px;
+		position: absolute;
+		border: 5px solid #f5f5f5;
+		background: white;
+		top: -50px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.copyright {
+		float: left;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		.subtitle {
+			font-size: 12px;
+			color: @color_8;
+		}
+	}
+	.social-media {
+		float: right;
+		li {
+			float: left;
+		}
+		a {
+			margin: 10px;
+			display: inline-block;
+			border: 1px solid #222;
+			border-radius: 20px;
+			text-align: center;
+			line-height: 40px;
+			width: 40px;
+			height: 40px;
+			color: @color_5;
+			text-decoration: none;
+		}
+	}
+}
+
+#footer.dark {
+	padding: 0;
+	background: #222;
+	.info {
+		padding: 80px 0;
+		.title {
+			margin: 0;
+		    margin-bottom: 30px;
+		    color: white;
+		    text-transform: uppercase;
+		    font-weight: normal;
+		    letter-spacing: 1px;
+			}
+		ul.common-list{
+			li {
+				border-bottom: 1px solid #333;
+				a {
+				display: block;
+				line-height: 45px;
+				color: #a2a2a2;
+			    text-decoration: none;
+			    text-transform: capitalize;
+			     &:before {
+			      	content: ">";
+			      	margin-right: 10px;
+			      }		    
+			      }
+
+			   }
+		}
+		.thumbnails {
+			li {
+				float: left;
+				a {
+					margin: 0 10px 10px 0;
+				    display: inline-block;
+				
+				}
+			}
+		}
+		
+		
+		}
+	
+	.bottom {
+		padding: 35px 0;
+		background: #1b1b1b;
+		.copyright {
+			margin-top: 10px;
+			color: @footer-dark-color;
+		    text-transform: capitalize;
+		    a {
+		    	color: white;
+		   	    text-decoration: none;
+		    }
+		}
+	}
+	.social-media {
+		a {
+			margin: 0;
+			margin-left: 15px;
+			border-color: @footer-dark-color;
+			color: @footer-dark-color;
+
+		}
+		
+
+	}
+}
+
+.go-top {
+	position: fixed;
+	right: 25px;
+	bottom: 35px;
+	width: 40px;
+	height: 40px;
+	background: rgba(0,0,0,0.6);
+	color: @color_7;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+}
