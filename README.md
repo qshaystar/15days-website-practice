@@ -1,8 +1,6 @@
 # 網頁15天課程練習網站
 
 
-## 作品介紹
-
 
 跟著網頁15天的前端線上課程學習，以實戰為主，從一開始的版型分析，HTML架構規劃與CSS美化頁面，並加上Less提升效率，一步步打造完整的網站。課程中也藉由各種不同版型的網頁練習，加深熟練度，並能靈活運用。
 
@@ -21,5 +19,5 @@
 
 ----
 
-### 作品展示 [Demo](https://qshaystar.github.io/15days-website-practice/index.html)
+### 網站展示 [Demo](https://qshaystar.github.io/15days-website-practice/index.html)
 
